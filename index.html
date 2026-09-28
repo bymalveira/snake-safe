@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#58cc02">
+  <title>SnakeSafe Ceará – Cobras da Caatinga e soro por perto</title>
+  <meta name="description" content="Conheça as cobras do Ceará e encontre hospitais com soro antiofídico perto de você.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#inicio" aria-label="SnakeSafe Ceará, início">
+      <span class="brand-icon" aria-hidden="true">🐍</span>
+      <span>SnakeSafe</span>
+    </a>
+    <nav class="nav" aria-label="Principal">
+      <a href="#cobras">Cobras</a>
+      <a href="#soro">Soro</a>
+      <a href="#socorro">Picada</a>
+    </nav>
+    <button class="btn btn-blue btn-small" type="button" data-action="locate" aria-label="Encontrar soro perto de mim">📍 <span class="hide-xs">Perto de mim</span></button>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <h1>Conheça as cobras do Ceará e encontre soro perto de você.</h1>
+      <p>Identifique a espécie, veja o tipo de soro indicado e ache o hospital mais próximo.</p>
+      <button class="btn btn-green" type="button" data-action="locate">📍 Encontrar soro perto de mim</button>
+    </section>
+
+    <section id="cobras" class="section" aria-labelledby="cobras-titulo">
+      <h2 id="cobras-titulo">Cobras registradas</h2>
+      <label class="search">
+        <span class="sr-only">Pesquisar cobra</span>
+        <span aria-hidden="true">🔍</span>
+        <input id="search" type="search" placeholder="Pesquisar cobra..." autocomplete="off">
+      </label>
+      <div id="filters" class="chips" role="group" aria-label="Filtrar cobras"></div>
+      <p id="count" class="muted" aria-live="polite"></p>
+      <div id="grid" class="grid" aria-busy="true"></div>
+    </section>
+
+    <section id="soro" class="section" aria-labelledby="soro-titulo">
+      <h2 id="soro-titulo">Encontre soro perto de você</h2>
+      <div id="soro-filter" class="soro-filter" hidden></div>
+      <div id="soro-status" class="status" role="status" aria-live="polite">
+        Toque em “Encontrar soro perto de mim” para ver os hospitais mais próximos.
+      </div>
+      <ul id="hospitals" class="hospitals"></ul>
+    </section>
+
+    <section id="socorro" class="section" aria-labelledby="socorro-titulo">
+      <div class="alert-card">
+        <h2 id="socorro-titulo">⚠️ Em caso de picada</h2>
+        <ul>
+          <li>Procure atendimento médico imediatamente.</li>
+          <li>Mantenha a pessoa calma e evite esforços desnecessários.</li>
+          <li>Não faça cortes, sucção ou torniquetes no local da picada.</li>
+        </ul>
+        <p>Em uma emergência, procure o serviço de emergência da sua região.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Conteúdo educativo. Não substitui atendimento médico. Hospitais: SESA-CE / Resolução CIB/CE nº 167 — confirme a disponibilidade por telefone.</p>
+  </footer>
+
+  <dialog id="details" aria-labelledby="details-title">
+    <div id="details-body"></div>
+  </dialog>
+</body>
+</html>
